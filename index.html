@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Pokédex</title>
+</head>
+<body onload="pokemonRender('1')">
+
+    <main>
+        <div class="container">
+            <div class="pokedex_header">
+                <h1 class="pokemon_name">Bulbasaur</h1> <span class="pokemon_number">Nº001</span>
+                <form class="form">
+                    <input type="search" class="input_search" placeholder="Nome ou Número do pokemon" required />
+                    <ul class="autocomplete-list" id="pokemon-list"></ul>
+                </form>
+            </div>
+            <div class="pokedex_main">
+                <img class="pokemon_image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" />
+                <span id="types">Tipos: </span>
+                <div class="pokemon-types"></div>
+                <div class="buttons">
+                    <button class="button btn-prev">&lt Prev</button>
+                    <button class="button btn-next">Next &gt</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxanium', cursive;
+    font-weight: 600;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+    background-color: #ccc;
+    overflow-x: hidden;
+}
+
+.container{
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.pokedex_header{
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.pokemon_number{
+    font-size: 20px;
+    color: #888;
+}
+
+.form input{
+    margin-top: 10px;
+    width: 227px;
+    padding: 5px 10px;
+    box-shadow: -3px 3px 0 #888, -5px 5px 0 #333;
+    outline: none;
+}
+
+.form{
+    position: relative;
+    width: 227px;
+    margin: 0 auto;
+}
+
+.autocomplete-list{
+    position: absolute;
+    top: 43px;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+    max-height: 200px;
+    width: 100%;
+    max-width: 227px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.autocomplete-list li{
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+    padding: 7px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.autocomplete-list li:hover{
+    background-color: #eee;
+}
+
+.pokedex_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokedex_main img{
+    height: 150px;
+    padding-bottom: 40px;
+}
+
+.pokemon-types{
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.pokemon-type{
+    padding: 5px 20px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.button{
+    cursor: pointer;
+    color: #FFF;
+    background-color: #f00;
+    padding: 5px 40px;
+    margin: 0 5px;
+    border-radius: 3px;
+    box-shadow: -2px 3px 0 rgb(34, 6, 6), -4px 6px #000;
+}
+
+.button:active{
+    box-shadow: inset -4px 4px 0 rgb(34, 6, 6);
+}
+
+
+
+
+.bug{
+    background-color: #9BCC50;
+    color: #000;
+}
+
+.dark{
+    background-color: #707070;
+    color: white;
+}
+.dragon{
+    background: rgb(83,164,207);
+    background: linear-gradient(180deg, rgba(83,164,207,1) 50%, rgba(2,0,36,1) 50%, rgba(241,110,87,1) 50%);
+    color: white;
+}
+.electric{
+    background-color: #EED535;
+}
+
+.fairy{
+    background-color: #FDB9E9;
+    color: #000;
+}
+.fighting{
+    background-color: #D46722;
+    color: #FFF;
+}
+
+.fire{
+    background-color: #FD7D24;
+    color: #FFF;
+}
+.flying{
+    background: rgb(61,199,239);
+    background: linear-gradient(180deg, rgba(61,199,239,1) 50%, rgba(2,0,36,1) 50%, rgba(189,185,184,1) 50%);
+    color: #000;
+}
+.ghost{
+    background-color: #7B62A3;
+    color: #FFF;
+}
+.grass{
+    background-color: #9BCC50;
+    color: #000;
+}
+.ground{
+    background: rgb(247,222,63);
+    background: linear-gradient(180deg, rgba(247,222,63,1) 50%, rgba(2,0,36,1) 50%, rgba(171,152,66,1) 50%);
+    color: #000;
+}
+
+.ice{
+    background-color: #51C4E7;
+    color: #000;
+}
+.normal{
+    background-color: #A4ACAF;
+    color: #000;
+}
+.poison{
+    background-color: #B97FC9;
+    color: #FFF;
+}
+.psychic{
+    background-color: #F366B9;
+    color: #FFF;
+}
+.rock{
+    background-color: #A38C21;
+    color: #FFF;
+}
+.steel{
+    background-color: #9EB7B8;
+    color: #000;
+}
+.water{
+    background-color: #4592C4;
+    color: #FFF;
+}
