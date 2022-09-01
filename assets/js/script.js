@@ -5,6 +5,7 @@ const form = document.querySelector('.form');
 const input = document.querySelector('.input_search');
 const pokemonTypes = document.querySelector('.pokemon-types');
 const pokedexMain = document.querySelector('.pokedex_main');
+const types = document.querySelector('#types')
 
 let pokemonType = document.querySelectorAll('.pokemon-type')
 let pokemonId = 1;
@@ -33,6 +34,7 @@ const buscarNomesPokemons = async () => {
     pokemons.sort();
 
     loadNomesPokemons(pokemons, pokemonsList)
+    pokemonsList.style.maxHeight = "200px";
 
 }
 
@@ -70,62 +72,7 @@ const pokemonRender = async (pokemon) => {
             newElement.classList.add('pokemon-type');
             newElement.appendChild(types)
             pokemonTypes.appendChild(newElement);
-            switch (data.types[i].type.name) {
-                case 'grass':
-                    newElement.classList.add('grass');
-                    break;
-                case 'bug':
-                    newElement.classList.add('bug');
-                    break;
-                case 'fighting':
-                    newElement.classList.add('fighting');
-                    break;
-                case 'flying':
-                    newElement.classList.add('flying');
-                    break;
-                case 'poison':
-                    newElement.classList.add('poison');
-                    break;
-                case 'ground':
-                    newElement.classList.add('ground');
-                    break;    
-                case 'rock':
-                    newElement.classList.add('rock');
-                    break;
-                case 'ghost':
-                    newElement.classList.add('ghost');
-                    break;
-                case 'steel':
-                    newElement.classList.add('steel');
-                    break;
-                case 'fire':
-                    newElement.classList.add('fire');
-                    break;
-                case 'water':
-                    newElement.classList.add('water');
-                    break;
-                case 'electric':
-                    newElement.classList.add('electric');
-                    break;    
-                case 'ice':
-                    newElement.classList.add('ice');
-                    break;
-                case 'dragon':
-                    newElement.classList.add('dragon');
-                    break;
-                case 'dark':
-                    newElement.classList.add('dark');
-                    break;    
-                case 'fairy':
-                    newElement.classList.add('fairy');
-                    break;
-                case 'normal':
-                    newElement.classList.add('normal');
-                    break;
-                case 'psychic':
-                    newElement.classList.add('psychic');
-                    break;
-            }
+            newElement.classList.add(data.types[i].type.name)
         }
     }
     removeElements(pokemonsList)
@@ -140,7 +87,7 @@ const pokemonRender = async (pokemon) => {
         nomePokemon.innerHTML = data.name[0].toUpperCase() + data.name.substring(1);
         numberPokemon.innerHTML = `Nº${data.id}`;
         if(data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'] == null && data['sprites']['other']['home']['front_default'] == null){
-            imagePokemon.src = 'https://media1.giphy.com/media/gKH0yJ21ia3chGqPxu/giphy.gif?cid=6c09b952wc9oje0e29s5lwt8k169gu5bbhwfxgipo0za5rmp&rid=giphy.gif&ct=ts'
+            imagePokemon.src = 'https://cdn-icons-png.flaticon.com/512/482/482929.png'
         } else if(data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'] != null){
             imagePokemon.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
         } else if(data['sprites']['other']['home']['front_default'] != null){
@@ -150,8 +97,10 @@ const pokemonRender = async (pokemon) => {
         pokemonId = data.id;
         if(pokemonId === 1){
             btnPrev.style.visibility = "hidden";
+            btnNext.style.visibility = "visible";
         } else if(pokemonId === 10249){
             btnNext.style.visibility = "hidden";
+            btnPrev.style.visibility = "visible";
         } else {
             btnNext.style.visibility = "visible";
             btnPrev.style.visibility = "visible";
@@ -160,15 +109,13 @@ const pokemonRender = async (pokemon) => {
         if(Object.keys(data.types).length){
             addElement();
         } 
-        
     } else {
         nomePokemon.innerHTML = "Pokemon não encontrado!";
         numberPokemon.innerHTML = `Nº0000`;
         imagePokemon.src = "https://media1.giphy.com/media/gKH0yJ21ia3chGqPxu/giphy.gif?cid=6c09b952wc9oje0e29s5lwt8k169gu5bbhwfxgipo0za5rmp&rid=giphy.gif&ct=ts"
+        types.innerHTML = "";
     }
     input.value = "";
-
-    
 }
 
 const removeElements = (element) =>{
@@ -181,7 +128,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     pokemonRender(input.value.toLowerCase());
     input.value = "";
-    
 })
 
 btnNext.addEventListener('click', () => {
@@ -190,26 +136,19 @@ btnNext.addEventListener('click', () => {
         pokemonRender(pokemonId)
     }
 })
-
 btnPrev.addEventListener('click', () => {
     if(pokemonId !== 1){
         pokemonId -= 1;
         pokemonRender(pokemonId)
     } 
 })
-
 input.addEventListener('input', () => {
     const filteredNames = filterPokemonNames(pokemons, input.value);
     loadNomesPokemons(filteredNames, pokemonsList);
-
 })
-
-input.addEventListener('focus', () => {
+input.addEventListener('click', () => {
     buscarNomesPokemons();
-    
 })
-
 document.querySelector('html').addEventListener('click', () => {
-
-    pokemonsList.innerHTML = "";
+    pokemonsList.style.maxHeight = "0px";
 })

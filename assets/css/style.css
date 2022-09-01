@@ -63,6 +63,19 @@ body{
     max-width: 227px;
     overflow-y: auto;
     overflow-x: hidden;
+    transition: max-height 0.3s linear;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
 }
 
 .autocomplete-list li{
@@ -119,9 +132,6 @@ body{
 .button:active{
     box-shadow: inset -4px 4px 0 rgb(34, 6, 6);
 }
-
-
-
 
 .bug{
     background-color: #9BCC50;
