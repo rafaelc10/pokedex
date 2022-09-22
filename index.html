@@ -1,38 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <title>Pokédex</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pokedex</title>
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link href="assets/css/style.css" rel="stylesheet" />
 </head>
-<body onload="pokemonRender('1')">
+    <body>
+		<div class="pokedex-box">
+			<div class="pokedex">
+				<div class="left">
+					<div class="left-top">
+						<div class="left-glass"></div>
+						<div class="left-top-buttons">
+							<div class="left-top-button-red"></div>
+							<div class="left-top-button-yellow"></div>
+							<div class="left-top-button-green"></div>
+						</div>
+					</div>
+					<div class="left-top-2"></div>
+					<div class="left-top-shadow"></div>
+					<div class="left-background"></div>
+					<!-- MEDIA QUERY ELEMENTS-->
+					<img src="./assets/images/logo-pokemon.png" />
+					<div class="left-triangle-yellow"></div>
+					<div class="left-detail"></div>
 
-    <main>
-        <div class="container">
-            <div class="pokedex_header">
-                <h1 class="pokemon_name">Bulbasaur</h1> <span class="pokemon_number">Nº001</span>
-                <form class="form">
-                    <input type="search" class="input_search" placeholder="Nome ou Número do pokemon" required />
-                    <ul class="autocomplete-list" id="pokemon-list"></ul>
-                </form>
-            </div>
-            <div class="pokedex_main">
-                <img class="pokemon_image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif" />
-                <span id="types">Tipos: </span>
-                <div class="pokemon-types"></div>
-                <div class="buttons">
-                    <button class="button btn-prev">&lt Prev</button>
-                    <button class="button btn-next">Next &gt</button>
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    <script src="assets/js/script.js"></script>
-
-</body>
+					<div class="left-background-2">
+						<div class="left-visor-background">
+							<div class="triangle"></div>
+							<div class="visor">
+								<div class="visor-pokemon"></div>
+								<h3 id="pokemon_identity"></h3>
+							</div>
+						</div>
+						<div class="left-gray-button"></div>
+						<div class="left-green-button"></div>
+						<div class="left-orange-button"></div>
+						<div class="left-square-input">
+							<form class="form">
+								<input type="text" class="search-pokemon" />
+							</form>
+						</div>
+						<div class="cross">
+							<div class="cross-top">
+								<div class="arrow-up"></div>
+							</div>
+							<div class="cross-left">
+								<div class="arrow-left"></div>
+							</div>
+							<div class="cross-bottom">
+								<div class="arrow-bottom"></div>
+							</div>
+							<div class="cross-right">
+								<div class="arrow-right"></div>
+							</div>
+							<div class="cross-center">
+								<div class="cross-center-circle"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle">
+					<div class="fold1"></div>
+					<div class="fold2"></div>
+					<div class="fold3"></div>
+					<div class="fold4"></div>
+					<div class="ellipse"></div>
+				</div>
+				<div class="right">
+					<div class="right-top"></div>
+					<div class="right-background"></div>
+					<div class="right-background-2">
+						<div class="right-visor">
+							<div class="visor-sliders">
+								<div class="visor-slide">
+									<div class="visor-types">
+										<h3 id="types">Tipos: </h3><div class="pokemon-types"></div>
+									</div>
+									<div class="visor-stats" id="chart1">
+										
+									</div>
+								</div>
+								<div class="visor-slide">
+									<div class="visor-stats" id="chart2">
+										
+									</div>
+								</div>
+								<div class="visor-slide">
+									<div class="visor-evolutions">
+										<h3>Evoluções:</h3>
+										<h3 id="no-evolutions">Pokemon Sem Evoluções!</h3>
+										<div class="visor-evolutions-img"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="right-buttons">
+							<div class="button-left">
+								<div class="button-left-arrow"></div>
+							</div>
+							<div class="button-right">
+								<div class="button-right-arrow"></div>
+							</div>
+						</div>
+						<div class="right-green-button"></div>
+						<div class="right-orange-button"></div>
+						<div class="right-square1">
+							<span id="span-height"></span>
+							<span id="pokemon-height"></span>
+						</div>
+						<div class="right-square2">
+							<span id="span-weight"></span>
+							<span id="pokemon-weight"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"> </script>
+		<script src="assets/js/script.js"></script>
+	</body>
 </html>
-
