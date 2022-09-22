@@ -5,7 +5,7 @@
 <h1 align="center">Pokedex<h1>
 
 <p align="center">
-  <img width="100%" style="max-width:100%" src="https://github.com/rafaelc10/pokedex/blob/master/assets/images/Pokedex-Mockup.pnggit ">
+  <img width="100%" style="max-width:100%" src="https://github.com/rafaelc10/pokedex/blob/master/assets/images/Pokedex-Mockup.png">
 </p>
 
 ## :computer: Projeto
